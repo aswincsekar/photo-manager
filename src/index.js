@@ -8,7 +8,7 @@ import thunkMiddleware from 'redux-thunk';
 import { createLogger} from 'redux-logger';
 import { Provider } from 'react-redux';
 import {personGroups} from './reducers';
-import {fetchToken, fetchPersonGroup, selectPersonGroup} from './actions';
+import {fetchToken, fetchPersonGroup} from './actions';
 import { createStore, applyMiddleware } from 'redux';
 
 const loggerMiddleware = createLogger();
@@ -25,9 +25,7 @@ store
 .then(() => {
     console.log(store.getState());
 }).then(()=>store
-.dispatch(fetchPersonGroup(1, "", store.getState().login.auth_token))
-.then(()=>store.dispatch(selectPersonGroup(0)))
-)
+.dispatch(fetchPersonGroup(1, "", store.getState().login.auth_token)))
 
 ReactDOM.render(
     <Provider store={store}>

@@ -5,6 +5,7 @@ export const SELECT_PERSON_GROUP = 'SELECT_PERSON_GROUP';
 export const INVALIDATE_PERSON_GROUP = "INVALIDATE_PERSON_GROUP";
 export const REQUEST_PERSON_GROUP = "REQUEST_PERSON_GROUP";
 export const RECEIVE_PERSON_GROUP = "RECEIVE_PERSON_GROUP";
+export const SELECT_PERSON = "SELECT_PERSON";
 
 export function receivePersonGroup(page, results){
     return {
@@ -46,4 +47,10 @@ export function selectPersonGroup(persongroup) {
     type: SELECT_PERSON_GROUP,
     persongroup
   }
+}
+export function selectPerson(person){
+    return {
+        type: SELECT_PERSON,
+        person
+    }
 }
